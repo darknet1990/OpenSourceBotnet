@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Interop.Shell32">
-      <HintPath>Vendor\Interop.Shell32.dll</HintPath>
+      <HintPath>..\..\..\..\legacy\conSweetDreams\conSweetDreams\obj\Debug\Interop.Shell32.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Win32.TaskScheduler, Version=2.2.2.26204, Culture=neutral, PublicKeyToken=0d013ddd5178a2ae, processorArchitecture=MSIL">
@@ -103,6 +103,7 @@
     <Compile Include="Plugins\Engines\TargetRecon\Plugins\WebCrawler.cs" />
     <Compile Include="Plugins\Engines\TargetRecon\Plugins\WebCrawler\Magento.cs" />
     <Compile Include="Plugins\Engines\TargetRecon\Plugins\WebCrawler\Wordpress.cs" />
+    <Compile Include="Plugins\Services\ExeMonitors\WinPcap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Plugins\Services\ExeMonitors\TorMonitor.cs" />

